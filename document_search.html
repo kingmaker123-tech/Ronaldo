@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .form-section {
+      margin-bottom: 20px;
+    }
+    input[type="text"],
+    select,
+    input[type="date"] {
+      padding: 8px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: 1px solid #000;
+      background-color: #efefef;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Search Documents</h1>
+  <div class="form-section">
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter name" />
+
+    <label for="passType">Pass Type:</label>
+    <select id="passType">
+      <option value="">All</option>
+      <option value="DEPENDANT PASS">DEPENDANT PASS</option>
+      <option value="VISIT PASS (SOCIAL)">VISIT PASS (SOCIAL)</option>
+    </select>
+
+    <label for="visaType">Visa Type:</label>
+    <select id="visaType">
+      <option value="">All</option>
+      <option value="MULTPLE ENTRY VISA">MULTPLE ENTRY VISA</option>
+      <option value="SINGLE ENTRY VISA">SINGLE ENTRY VISA</option>
+    </select>
+
+    <button onclick="filterTable()">Search</button>
+    <button onclick="resetForm()">Reset</button>
+  </div>
+
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Citizen</th>
+        <th>Document No</th>
+        <th>Current Pass Type</th>
+        <th>Renewal Pass Duration</th>
+        <th>Current Pass Due Date</th>
+        <th>Current Visa Type</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>SHENG MIN</td>
+        <td>PEOPLE REPUBLIC OF CHINA</td>
+        <td>EH2315974</td>
+        <td>DEPENDANT PASS</td>
+        <td>12</td>
+        <td>28/11/2024</td>
+        <td>MULTPLE ENTRY VISA</td>
+        <td>PRINT | RE-PRINT RECEIPT</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>SHENG MIN</td>
+        <td>PEOPLE REPUBLIC OF CHINA</td>
+        <td>EH2315974</td>
+        <td>VISIT PASS (SOCIAL)</td>
+        <td></td>
+        <td></td>
+        <td>SINGLE ENTRY VISA</td>
+        <td>PRINT | RE-PRINT RECEIPT</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>SHENG MIN</td>
+        <td>PEOPLE REPUBLIC OF CHINA</td>
+        <td>EH2315974</td>
+        <td>VISIT PASS (SOCIAL)</td>
+        <td></td>
+        <td></td>
+        <td>SINGLE ENTRY VISA</td>
+        <td>PRINT | RE-PRINT RECEIPT</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>SHENG MIN</td>
+        <td>PEOPLE REPUBLIC OF CHINA</td>
+        <td>EH2315974</td>
+        <td>VISIT PASS (SOCIAL)</td>
+        <td></td>
+        <td></td>
+        <td>SINGLE ENTRY VISA</td>
+        <td>PRINT | RE-PRINT RECEIPT</td>
+      </tr>
+    </tbody>
+  </table>
+  <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Citizen</th>
+        <th>Document No</th>
+        <th>Current Pass Type</th>
+        <th>Renewal Pass Duration</th>
+        <th>Current Pass Due Date</th>
+        <th>Current Visa Type</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>SYED IQRAR HUSSAIN</td>
+        <td>PAKISTAN</td>
+        <td>KB6909243</td>
+        <td>(11/03/2025)</td>
+        <td>(VISIT PASS TEMPRARY EMPLOYEMENT)</td>
+        <td>(12)</td>
+        <td>(11/03/2026)</td>
+        <td>(MULTILPLE ENTRY Pass)</td>
+        <td>(PRINT)</td>
+      <td>(RE-PRINT )</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <tr>
+  <tr>
+        <td>2</td>
+        <td>SYED IQRAR HUSSAIN</td>
+        <td>PAKISTAN</td>
+        <td>KB6909243</td>
+        <td>(11/03/2025)</td>
+        <td>(VISIT PASS TEMPRARY EMPLOYEMENT)</td>
+        <td>(12)</td>
+        <td>(11/03/2026)</td>
+        <td>(MULTILPLE ENTRY Pass)</td>
+        <td>(PAY)</td>
+      <td>( )</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+ <tr>
+   <td>3</td>
+        <td>SYED IQRAR HUSSAIN</td>
+        <td>PAKISTAN</td>
+        <td>KB6909243</td>
+        <td>(11/03/2025)</td>
+        <td>(VISIT PASS TEMPRARY EMPLOYEMENT)</td>
+        <td>(12)</td>
+        <td>(11/03/2026)</td>
+        <td>(MULTILPLE ENTRY Pass)</td>
+        <td>(PAY)</td>
+      <td>( )</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function filterTable() {
+      let name = document.getElementById("name").value.toUpperCase();
+      let passType = document.getElementById("passType").value.toUpperCase();
+      let visaType = document.getElementById("visaType").value.toUpperCase();
+
+      let table = document.getElementById("dataTable");
+      let tr = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < tr.length; i++) {
+        let tdName = tr[i].getElementsByTagName("td")[1];
+        let tdPass = tr[i].getElementsByTagName("td")[4];
+        let tdVisa = tr[i].getElementsByTagName("td")[7];
+        if (tdName && tdPass && tdVisa) {
+          let nameText = tdName.textContent || tdName.innerText;
+          let passText = tdPass.textContent || tdPass.innerText;
+          let visaText = tdVisa.textContent || tdVisa.innerText;
+          if (
+            (name === "" || nameText.toUpperCase().includes(name)) &&
+            (passType === "" || passText.toUpperCase().includes(passType)) &&
+            (visaType === "" || visaText.toUpperCase().includes(visaType))
+          ) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+    function resetForm() {
+      document.getElementById("name").value = "";
+      document.getElementById("passType").value = "";
+      document.getElementById("visaType").value = "";
+      filterTable();
+    }
+  </script>
+</body>
+</html>
